@@ -1,1 +1,1 @@
-web: gunicorn dbpedia:app
+web: gunicorn quepy-api:app
