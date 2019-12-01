@@ -37,9 +37,7 @@ class PresidentOfQuestion(QuestionTemplate):
 
     def interpret(self, match):
         president = PresidentOf(match.country)
-        incumbent = IncumbentOf(president)
-        label = LabelOf(incumbent)
-
+        label = LabelOf(president)
         return label, "enum"
 
 
@@ -78,7 +76,8 @@ class LanguageOfQuestion(QuestionTemplate):
 
     def interpret(self, match):
         language = LanguageOf(match.country)
-        return language, "enum"
+        label = LabelOf(language)
+        return label, "enum"
 
 
 class PopulationOfQuestion(QuestionTemplate):

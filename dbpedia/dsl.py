@@ -23,7 +23,7 @@ class IsPerson(FixedType):
 
 
 class IsPlace(FixedType):
-    fixedtype = "dbpedia:Place"
+    fixedtype = "dbo:Place"
 
 
 class IsCountry(FixedType):
@@ -71,18 +71,18 @@ class LabelOf(FixedRelation):
 
 
 class UTCof(FixedRelation):
-    relation = "dbp:utcOffset"
+    relation = "dbo:utcOffset"
     reverse = True
 
 
 class PresidentOf(FixedRelation):
-    relation = "dbp:leaderTitle"
+    relation = "dbo:leader"
     reverse = True
 
 
 class IncumbentOf(FixedRelation):
     relation = "dbp:incumbent"
-    reverse = True
+    reverse = False
 
 
 class CapitalOf(FixedRelation):
@@ -91,12 +91,12 @@ class CapitalOf(FixedRelation):
 
 
 class LanguageOf(FixedRelation):
-    relation = "dbp:officialLanguages"
+    relation = "dbo:officialLanguage"
     reverse = True
 
 
 class PopulationOf(FixedRelation):
-    relation = "dbp:populationCensus"
+    relation = "dbo:populationTotal"
     reverse = True
 
 
@@ -109,6 +109,9 @@ class ActiveYears(FixedRelation):
     relation = "dbp:yearsActive"
     reverse = True
 
+class StartYear(FixedRelation):
+    relation = "dbo:activeYearsStartYear"
+    reverse = True
 
 class MusicGenreOf(FixedRelation):
     relation = "dbo:genre"
@@ -135,7 +138,7 @@ class ReleaseDateOf(FixedRelation):
 
 
 class StarsIn(FixedRelation):
-    relation = "dbp:starring"
+    relation = "dbo:starring"
     reverse = True
 
 
@@ -150,7 +153,7 @@ class ShowNameOf(FixedRelation):
 
 
 class HasActor(FixedRelation):
-    relation = "dbp:starring"
+    relation = "dbo:starring"
 
 
 class CreatorOf(FixedRelation):
@@ -182,11 +185,11 @@ class DurationOf(FixedRelation):
 
 
 class HasAuthor(FixedRelation):
-    relation = "dbp:author"
+    relation = "dbo:author"
 
 
 class AuthorOf(FixedRelation):
-    relation = "dbp:author"
+    relation = "dbo:author"
     reverse = True
 
 

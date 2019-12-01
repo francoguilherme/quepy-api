@@ -15,7 +15,7 @@ from refo import Plus, Question
 from quepy.dsl import HasKeyword
 from quepy.parsing import Lemma, Lemmas, Pos, QuestionTemplate, Particle
 from dsl import IsBand, LabelOf, IsMemberOf, ActiveYears, MusicGenreOf, \
-    NameOf, IsAlbum, ProducedBy
+    NameOf, IsAlbum, ProducedBy, StartYear
 
 
 class Band(Particle):
@@ -29,8 +29,7 @@ class Band(Particle):
 class BandMembersQuestion(QuestionTemplate):
     """
     Regex for questions about band member.
-    Ex: "Radiohead members"
-        "What are the members of Metallica?"
+    Ex: "What are the members of Metallica?"
     """
 
     regex1 = Band() + Lemma("member")
@@ -57,8 +56,8 @@ class FoundationQuestion(QuestionTemplate):
         (Lemma("form") | Lemma("found")) + Question(Pos("."))
 
     def interpret(self, match):
-        active_years = ActiveYears(match.band)
-        return active_years, "literal"
+        start_year = StartYear(match.band)
+        return start_year, "literal"
 
 
 class GenreQuestion(QuestionTemplate):

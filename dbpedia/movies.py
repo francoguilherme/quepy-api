@@ -113,7 +113,7 @@ class ActedOnQuestion(QuestionTemplate):
 
     def interpret(self, match):
         movie = IsMovie() + HasActor(match.actor)
-        movie_name = NameOf(movie)
+        movie_name = LabelOf(movie)
         return movie_name, "enum"
 
 

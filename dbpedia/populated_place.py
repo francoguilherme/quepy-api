@@ -29,7 +29,7 @@ class PopulatedPlace(Particle):
 class CapitalOfQuestion(QuestionTemplate):
     """
     Regex for questions about the capital of a country.
-    Ex: "What is the capital of Massachussets?"
+    Ex: "What is the capital of Massachusetts?"
     """
 
     opening = Lemma("what") + Token("is")

@@ -28,7 +28,6 @@ dbpedia = quepy.install("dbpedia")
 
 @app.route('/', methods=['POST'])
 def hello():
-    print sys.path
     data = request.json["question"]
     sparql, result, error = answer_question(data)
     response = {
@@ -58,8 +57,12 @@ def print_enum(results, target, metadata=None):
                 label = result[target]["value"]
                 if label not in used_labels:
                     used_labels.append(label)
-                    print label
                     response.append(label)
+        elif result[target]["type"] == u"typed-literal":
+            label = result[target]["value"]
+            if label not in used_labels:
+                used_labels.append(label)
+                response.append(label)
     return response
 
 
@@ -204,7 +207,6 @@ def answer_question(question):
             return "", "", "No answer found"
 
     resp = print_handlers[query_type](results, target, metadata)
-    print
     return query, resp, ""
 
 if __name__ == '__main__':
