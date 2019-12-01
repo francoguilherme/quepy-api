@@ -1,1 +1,1 @@
-web: gunicorn __name__:app
+web: gunicorn quepy-api:app

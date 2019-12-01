@@ -15,6 +15,7 @@ Main script for DBpedia quepy.
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 import sys
+import os
 import time
 import random
 import datetime
@@ -27,6 +28,7 @@ dbpedia = quepy.install("dbpedia")
 
 @app.route('/', methods=['POST'])
 def hello():
+    print sys.path
     data = request.json["question"]
     sparql, result, error = answer_question(data)
     response = {
