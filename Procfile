@@ -1,1 +1,1 @@
-web: gunicorn dbpedia:main
+web: gunicorn dbpedia:app
