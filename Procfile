@@ -1,1 +1,1 @@
-web: gunicorn main.py:dbpedia
+web: gunicorn dbpedia:main.py
