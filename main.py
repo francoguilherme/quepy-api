@@ -13,7 +13,10 @@ Main script for DBpedia quepy.
 """
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 import sys
 import os
 import time
@@ -27,6 +30,7 @@ sparql = SPARQLWrapper("http://dbpedia.org/sparql")
 dbpedia = quepy.install("dbpedia")
 
 @app.route('/', methods=['POST'])
+@cross_origin()
 def hello():
     data = request.json["question"]
     sparql, result, error = answer_question(data)
