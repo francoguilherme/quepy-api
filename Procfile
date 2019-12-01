@@ -1,1 +1,0 @@
-web: gunicorn quepy-api:app
