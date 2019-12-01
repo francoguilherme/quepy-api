@@ -1,0 +1,15 @@
+Click==7.0
+Flask==1.1.1
+isodate==0.6.0
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+nltk==3.4.5
+pyparsing==2.4.5
+quepy==0.2
+rdflib==4.2.2
+REfO==0.13
+singledispatch==3.4.0.3
+six==1.13.0
+SPARQLWrapper==1.8.4
+Werkzeug==0.16.0
